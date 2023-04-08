@@ -19,11 +19,11 @@ export function middleware(req) {
   if (req.nextUrl.searchParams.has(searchParamName)) lngInSearchParams = acceptLanguage.get(req.nextUrl.searchParams.get(searchParamName))
   if (req.cookies.has(cookieName)) lngInCookie = acceptLanguage.get(req.cookies.get(cookieName).value)
   lngInAcceptHeader = acceptLanguage.get(req.headers.get('Accept-Language'))
-  const lng = lngInSearchParams || lngInCookie || lngInAcceptHeader
+  const lng = lngInSearchParams || lngInCookie || lngInAcceptHeader || fallbackLng
   const nextUrlHeader = req.headers.has('next-url') && req.headers.get('next-url')
 
   const response = NextResponse.next()
-  if (nextUrlHeader && nextUrlHeader.indexOf(`"lng":"${lng}"`) > -1) {
+  if ((nextUrlHeader && nextUrlHeader.indexOf(`"lng":"${lng}"`) > -1) || !lngInCookie) {
     response.cookies.set(cookieName, lng)
   }
 
