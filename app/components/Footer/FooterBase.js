@@ -1,30 +1,15 @@
-import Link from 'next/link'
+import { LangSelect } from './LangSelect'
 import { Trans } from 'react-i18next/TransWithoutContext'
-import { languages } from '../../i18n/settings'
 
-export const FooterBase = ({ t, i18n, path = '/', attachOnClick }) => {
+export const FooterBase = ({ t, i18n }) => {
   const lng = i18n.resolvedLanguage
+
   return (
     <footer>
       <Trans i18nKey="languageSwitcher" t={t}>
         Switch from <strong>{{lng}}</strong> to:{' '}
       </Trans>
-      {languages.filter((l) => lng !== l).map((l, index) => {
-        return (
-          <span key={l}>
-            {index > 0 && (' or ')}
-            {attachOnClick && <Link href={`${path}?lng=${l}`} onClick={(e) => {
-                e.preventDefault()
-                i18n.changeLanguage(l)
-              }}>
-              {l}
-            </Link>}
-            {!attachOnClick && <Link href={`${path}?lng=${l}`}>
-              {l}
-            </Link>}
-          </span>
-        )
-      })}
+      <LangSelect currentLanguage={lng} />
       <p>{t('description')}</p>
       <p
         style={{
@@ -34,7 +19,7 @@ export const FooterBase = ({ t, i18n, path = '/', attachOnClick }) => {
         }}
       >
         <Trans i18nKey="helpLocize" t={t}>
-          With using 
+          With using
           <a href="https://locize.com" target="_new">
             locize
           </a>

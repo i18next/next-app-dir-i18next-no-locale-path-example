@@ -1,12 +1,11 @@
 import Link from 'next/link'
 import { Trans } from 'react-i18next/TransWithoutContext'
-import { useTranslation } from './i18n'
 import { Header } from './components/Header'
 import { Footer } from './components/Footer'
+import {getServerTranslations} from "./i18n/server"
 
 export default async function Page() {
-  const { t } = await useTranslation()
-
+  const { t } = await getServerTranslations()
   return (
     <>
       <main>
