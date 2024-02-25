@@ -19,7 +19,7 @@ export const FooterBase = ({ t, i18n }) => {
         }}
       >
         <Trans i18nKey="helpLocize" t={t}>
-          With using
+          With using 
           <a href="https://locize.com" target="_new">
             locize
           </a>
