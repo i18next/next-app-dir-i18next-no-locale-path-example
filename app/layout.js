@@ -16,8 +16,8 @@ export default async function RootLayout({ children }) {
   const lng = await detectLanguage()
 
   return (
-    <I18nProvider language={lng} dir={dir(lng)}>
-      <html lang={lng}>
+    <I18nProvider language={lng}>
+      <html lang={lng} dir={dir(lng)}>
         <head />
         <body>
           {children}
