@@ -1,7 +1,7 @@
 'use client'
 
 import { FooterBase } from './FooterBase'
-import { useTranslation } from '../../i18n/client'
+import { useTranslation } from 'react-i18next'
 
 export const Footer = ({ path }) => {
   const { t, i18n } = useTranslation('footer')

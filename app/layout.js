@@ -1,16 +1,18 @@
 import './global.css'
 
-import { dir } from 'i18next'
-import { detectLanguage } from './i18n'
+import { detectLanguage } from './i18n/server'
+import { I18nProvider } from "./i18n/i18n-context"
 
-export default function RootLayout({ children }) {
-  const lng = detectLanguage()
+export default async function RootLayout({ children }) {
+  const lng = await detectLanguage();
   return (
-    <html lang={lng} dir={dir(lng)}>
-      <head />
-      <body>
-        {children}
-      </body>
-    </html>
+    <I18nProvider language={lng}>
+      <html lang={lng}>
+        <head />
+        <body>
+          {children}
+        </body>
+      </html>
+    </I18nProvider>
   )
 }

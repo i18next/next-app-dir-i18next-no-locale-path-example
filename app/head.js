@@ -1,4 +1,4 @@
-import { useTranslation } from './i18n'
+import { useTranslation } from 'react-i18next'
 
 export default async function Head() {
   const { t } = await useTranslation()
