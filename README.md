@@ -9,6 +9,6 @@ There is also an example middleware with language detection and persistence via 
 
 *This example has been created out of [this discussion](https://github.com/i18next/next-app-dir-i18next-example/issues/12).*
 
-The example was originally based on this [example](https://github.com/i18next/next-app-dir-i18next-example) with this [blog post](https://locize.com/blog/next-app-dir-i18n) describing this with more detail information.
+The example was originally based on this [example](https://github.com/i18next/next-app-dir-i18next-example) with this [blog post](https://www.locize.com/blog/next-app-dir-i18n?utm_source=next_app_dir_i18next_no_locale_path_example_readme&utm_medium=github&utm_campaign=readme) describing this with more detail information.
 
-[![](https://locize.com/blog/next-app-dir-i18n/next-app-dir-i18n.jpg)](https://locize.com/blog/next-app-dir-i18n)
+[![](https://www.locize.com/blog/next-app-dir-i18n/next-app-dir-i18n.jpg)](https://www.locize.com/blog/next-app-dir-i18n?utm_source=next_app_dir_i18next_no_locale_path_example_readme&utm_medium=github&utm_campaign=readme)
